@@ -5,13 +5,17 @@ for(var i=0; i<pacientes.length;i++) {
 
 	var peso = paciente.querySelector(".info-peso").textContent;
 	var altura = paciente.querySelector(".info-altura").textContent;
-
+	tdIMC = paciente.querySelector(".info-imc");
 	if(peso <= 0 || peso >= 1000) {
-		console.log("Peso inválido.")
+		paciente.style.color = 'red';
+		paciente.style.fontWeight = 'bold';
+		tdIMC.textContent = 'Peso inválido.';
 	} else if(altura <= 0 || altura >= 3.00) {
-		console.log("Altura inválida.")
+		paciente.style.color = 'red';
+		paciente.style.fontWeight = 'bold';
+		tdIMC.textContent = 'Altura inválida.';
 	} else {
 		var imc = peso / (altura * altura);
-		paciente.querySelector(".info-imc").textContent = imc.toFixed(2);
+		tdIMC.textContent = imc.toFixed(2);
 	}
 }
