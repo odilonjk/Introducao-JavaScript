@@ -1,0 +1,1 @@
+Repositório para o curso de **JavaScript: Programando na linguagem da web** da [Alura](http://www.alura.com.br).
