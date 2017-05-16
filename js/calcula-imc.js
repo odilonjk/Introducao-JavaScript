@@ -20,13 +20,17 @@ for(var i=0; i<pacientes.length;i++) {
 
 	} else {
 
-		var imc = peso / (altura * altura);
-		tdIMC.textContent = imc.toFixed(2);
+		var imc = calcularImc(peso, altura);
+		tdIMC.textContent = imc;
 
 	}
 
 };
 
-titulo.addEventListener('click', function() {
-	window.location.reload(true);
-});
+function calcularImc(peso, altura) {
+	var imc = 0;
+
+	imc = peso / (altura * altura);
+
+	return imc.toFixed(2);
+}
