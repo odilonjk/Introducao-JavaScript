@@ -138,6 +138,15 @@ button[disabled=disabled], button:disabled {
 	font-weight: bold;
 }
 
+.mensagem-erro {
+	background-color: lightcoral;
+	font-weight: bold;
+	width: 100%;
+	padding: 10px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+
 #formAdicionar {
 	margin-top: 70px;
 }
