@@ -17,6 +17,7 @@ botaoAdicionar.addEventListener("click", function(event) {
       //  Adiciona TR na tabela
       tabela.appendChild(pacienteTr);
 
+      mensagem("Paciente adicionado com sucesso!");
       form.reset();
     }
 });
@@ -68,7 +69,10 @@ function montaTd(dado, classe) {
 
 //  Verifica o paciente e retorna boolean
 function validaPaciente(paciente) {
+  var mensagemErro = document.querySelector("#mensagem-erro");
+  mensagemErro.innerHTML = "";
   var erros = [];
+
   if(paciente.nome.length == 0){
     erros.push("Nome é obrigatório.");
   }
@@ -81,28 +85,8 @@ function validaPaciente(paciente) {
   if(validaGordura(paciente.gordura)){
     erros.push("Gordura inválida.");
   }
-  return semErros(erros);
-}
-
-function semErros(erros) {
-  var mensagemErro = document.querySelector("#mensagem-erro");
-  mensagemErro.innerHTML = "";
-
-  //  Adiciona cada erro na lista e retorna false
   if(erros.length > 0) {
-    erros.forEach(function (erro) {
-      var li = document.createElement("li");
-      li.textContent = erro;
-      li.classList.add("mensagem-erro");
-      mensagemErro.appendChild(li);
-    });
-    return false;
+    mensagemErro(erros);
   }
-
-  //  Sem erros
-  return true;
-}
-
-function imprimirErro(msg) {
-
+  return erros.length == 0;
 }
