@@ -1,4 +1,4 @@
-function mensagemErro(erros) {
+function enviaMensagemErro(erros) {
   var ulErro = document.querySelector("#mensagem-erro");
   ulErro.innerHTML = "";
 
@@ -10,14 +10,14 @@ function mensagemErro(erros) {
   });
 };
 
-function mensagem(msgs) {
+function enviaMensagem(mensagens) {
   var ulMensagem = document.querySelector("#mensagem");
   ulMensagem.innerHTML = "";
 
-  msgs.forEach(function(msg) {
+  mensagens.forEach(function (mensagem) {
     var li = document.createElement("li");
-    li.textContent = msg;
+    li.textContent = mensagem;
     li.classList.add("mensagem-default");
     ulMensagem.appendChild(li);
-  })
+  });
 };
