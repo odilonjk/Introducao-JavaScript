@@ -16,8 +16,7 @@ botaoAdicionar.addEventListener("click", function(event) {
 
       //  Adiciona TR na tabela
       tabela.appendChild(pacienteTr);
-      var msgs = ["Paciente adicionado com sucesso!"];
-      enviaMensagem(msgs);
+      enviaMensagem(["Paciente adicionado com sucesso!"]);
       form.reset();
     }
 });
@@ -86,7 +85,7 @@ function validaPaciente(paciente) {
     erros.push("Gordura inválida.");
   }
   if(erros.length > 0) {
-    enviarMensagemErro(erros);
+    enviaMensagemErro(erros);
   }
   return erros.length == 0;
 }
