@@ -9,17 +9,21 @@ botaoAdicionar.addEventListener("click", function(event) {
 
 
     if(validaPaciente(paciente)) {
-      //  Cria TR e TD
-      var pacienteTr = montaTr(paciente);
-
-      var tabela = document.querySelector("#tabela-pacientes");
-
-      //  Adiciona TR na tabela
-      tabela.appendChild(pacienteTr);
+      adicionaPacienteNaTabela(paciente);
       enviaMensagem(["Paciente adicionado com sucesso!"]);
       form.reset();
     }
 });
+
+function adicionaPacienteNaTabela(paciente) {
+  //  Cria TR e TD
+  var pacienteTr = montaTr(paciente);
+
+  var tabela = document.querySelector("#tabela-pacientes");
+
+  //  Adiciona TR na tabela
+  tabela.appendChild(pacienteTr);
+};
 
 function obtemPacienteDoForm(form) {
 
